@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 class Solution:
-    def findCommonResponse(self, responses: List[List[str]]) -> str:
+    def findCommonResponse(self, responses: List[[str]]) -> str:
         Row = len(responses)
         Col = len(responses[0])
 
