@@ -53,6 +53,10 @@ class Solution:
 
             for j in range(i, len(s)):
                 curr = s[i:j+1]
+
+                if path and int(curr) != int(path[-1]) - 1:
+                    continue
+
                 path.append(curr)
                 if backtrack(j+1):
                     return True
