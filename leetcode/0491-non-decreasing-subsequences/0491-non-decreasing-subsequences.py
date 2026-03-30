@@ -27,9 +27,6 @@ class Solution:
         path = []
 
         def backtrack(i):
-            for k in range(1, len(path)):
-                if path[k] < path[k-1]:
-                    return
             if len(path) >= 2 and path not in ans:
                 ans.append(path[:])
 
