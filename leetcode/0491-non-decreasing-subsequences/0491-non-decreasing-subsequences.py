@@ -35,6 +35,8 @@ class Solution:
 
             
             for j in range(i, len(nums)):
+                if path and nums[j] < path[-1]:
+                    continue
                 path.append(nums[j])
                 backtrack(j+1)
                 path.pop()
