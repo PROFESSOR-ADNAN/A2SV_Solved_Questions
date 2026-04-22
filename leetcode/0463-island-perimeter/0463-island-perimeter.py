@@ -23,9 +23,10 @@ class Solution:
 
         for r in range(Row):
             for c in range(Col):
-                if grid[r][c] == 1 and (r, c) not in visited:
+                if grid[r][c] == 1:
                     dfs(r, c)
+                    return perimeter
 
-        return perimeter
+        return 0
 
 
