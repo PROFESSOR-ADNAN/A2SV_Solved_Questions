@@ -146,6 +146,54 @@
 
 
 
+# #!/usr/bin/env pypy3
+# from sys import stdin
+# input = stdin.readline
+
+# def si():
+#     return input().strip()
+
+# def ii():
+#     return int(input())
+
+# def mi():
+#     return map(int, input().split())
+
+# def li():
+#     return list(map(int, input().split()))
+
+# def solve():
+#     n = ii()
+#     grid = []
+#     for _ in range(n):
+#         curr = si()
+#         grid.append(curr)
+
+#     ans = [-1] * n
+#     for i in range(n):
+#         cnt = 0
+#         for j in range(i+1, n):
+#             if grid[i][j] == "1": cnt += 1
+
+#         for k in range(n-1, -1, -1):
+#             if ans[k] == -1 and cnt == 0:
+#                 ans[k] = i+1
+#                 break
+#             else:
+#                 if ans[k] == -1: cnt -= 1
+
+#     print(*ans)
+    
+# def main():
+#     t = ii()
+#     for _ in range(t):
+#         solve()
+
+# if __name__ == "__main__":
+#     main()
+
+
+
 #!/usr/bin/env pypy3
 from sys import stdin
 input = stdin.readline
@@ -169,21 +217,21 @@ def solve():
         curr = si()
         grid.append(curr)
 
-    ans = [-1] * n
+
+    perm = [-1] * n
     for i in range(n):
         cnt = 0
         for j in range(i+1, n):
             if grid[i][j] == "1": cnt += 1
-
+        
         for k in range(n-1, -1, -1):
-            if ans[k] == -1 and cnt == 0:
-                ans[k] = i+1
+            if perm[k] == -1 and cnt == 0:
+                perm[k] = i+1
                 break
-            else:
-                if ans[k] == -1: cnt -= 1
+            elif perm[k] == -1: cnt -= 1
 
-    print(*ans)
-    
+    print(*perm)
+
 def main():
     t = ii()
     for _ in range(t):
